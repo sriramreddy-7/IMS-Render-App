@@ -78,14 +78,17 @@
       </div>
     </nav>
     <main class="container">
+        {% for job in j %}
       <div class="card">
-        <h5 class="card-header">{{ job_name }}</h5>
+        <h5 class="card-header">{{ job.job_name }}</h5>
         <div class="card-body">
-          <h5 class="card-title">{{ company_name }}</h5>
-          <p class="card-text">{{ job_type }}</p>
-          <a href="{{ job_url }}" class="btn btn-primary" target="_blank">Apply</a>
+          <h5 class="card-title">{{ job.company_name }}</h5>
+          <p class="card-text">{{ job.job_type }}</p>
+          <p class="card-text">Dead line {{ job.eadline_date }}</p>
+          <a href="{{ job.job_url }}" class="btn btn-primary" target="_blank">Apply</a>
         </div>
       </div>
+      {% endfor %}
     </main>
   </body>
 </html>
