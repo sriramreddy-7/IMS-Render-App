@@ -21,11 +21,11 @@
       crossorigin="anonymous"
     ></script>
   </head>
-<style>
-    .container{
-        margin-top: 25px;
+  <style>
+    .container {
+      margin-top: 25px;
     }
-</style>
+  </style>
   <body>
     <nav
       class="navbar navbar-expand-lg bg-primary"
@@ -51,7 +51,7 @@
               <a class="nav-link active" aria-current="page" href="#">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" href="#">Applied Interships</a>
+              <a class="nav-link active" href="#">Applied Interships & Jobs</a>
             </li>
             <!-- <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="#"
@@ -78,18 +78,20 @@
       </div>
     </nav>
     <main class="container">
-        {% for job in j %}
+      {% for job in j %}
       <div class="card">
         <h5 class="card-header">{{ job.job_name }}</h5>
         <div class="card-body">
           <h5 class="card-title">{{ job.company_name }}</h5>
           <p class="card-text">{{ job.job_type }}</p>
           <p class="card-text">Dead line {{ job.eadline_date }}</p>
-          <a href="{{ job.job_url }}" class="btn btn-primary" target="_blank">Apply</a>
+          <a href="{{ job.job_url }}" class="btn btn-primary" target="_blank"
+            >Apply</a
+          >
         </div>
       </div>
-      <br>
-      <br>
+      <br />
+      <br />
       {% endfor %}
     </main>
   </body>
