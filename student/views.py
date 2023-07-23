@@ -21,7 +21,9 @@ def my_login(request):
             if user is not None:
                 login(request,user)
                 if designation == 'student' :
-                    return HttpResponse('<h1 style="color:green;"> Login Sucessful to Student dashbaord </h1>')
+                    return redirect('student_dashboard')
+                    # j=Jobs.objects.all()
+                    # return render(request,'student_dashboard.html',{'j':j})
                 elif designation == 'tpo' :
                     return render(request,'tpo_dashboard.html')
                 else:
@@ -59,3 +61,7 @@ def tpo_post_job(request):
         return render(request,'student_dashboard.html',{'j':j})
     else:
         return render(request,'tpo_post_job.html')
+    
+def student_dashboard(request):
+    j=Jobs.objects.all()
+    return render(request,'student_dashboard.html',{'j':j})
