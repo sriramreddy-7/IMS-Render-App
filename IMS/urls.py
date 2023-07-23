@@ -25,4 +25,5 @@ urlpatterns = [
     path('home',views.home,name="home"),
     path('tpo_dashboard',views.tpo_dashboard,name="tpo_dashboard"),
     path('tpo_post_job',views.tpo_post_job,name="tpo_post_job"),
+    path('student_dashboard',views.student_dashboard,name="student_dashboard"),
 ]
