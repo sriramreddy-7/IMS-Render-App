@@ -80,10 +80,10 @@
     <main class="container">
       {% for job in j %}
       <div class="card">
-        <h5 class="card-header">{{ job.job_name }}</h5>
+        <h5 class="card-header">Role : {{ job.job_name }}</h5>
         <div class="card-body">
-          <h5 class="card-title">{{ job.company_name }}</h5>
-          <p class="card-text">{{ job.job_type }}</p>
+          <h5 class="card-title"> Company Name : {{ job.company_name }}</h5>
+          <p class="card-text">Job Type : {{ job.job_type }}</p>
           <p class="card-text">Dead line {{ job.eadline_date }}</p>
           <a href="{{ job.job_url }}" class="btn btn-primary" target="_blank"
             >Apply</a
