@@ -11,6 +11,7 @@
       integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
       crossorigin="anonymous"
     />
+    <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
@@ -19,9 +20,12 @@
   </head>
 
   <body>
-    <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark" style="background-color:darkorange;">
+    <nav
+      class="navbar navbar-expand-lg bg-primary"
+      data-bs-theme="dark"
+      style="background-color: darkorange"
+    >
       <div class="container-fluid">
-       
         <a class="navbar-brand" href="#">SR University</a>
         <button
           class="navbar-toggler"
@@ -43,24 +47,119 @@
               <a class="nav-link active" href="#">About</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Contact</a>
+              <a class="nav-link active" aria-current="page" href="#"
+                >Contact</a
+              >
             </li>
-            </ul>
-          <form class="d-flex" role="search">
-            <input
-              class="form-control me-2"
-              type="search"
-              placeholder="Search"
-              aria-label="Search"
-            />
-            <button class="btn btn-outline-success" type="submit">
-              Search
-            </button>
-          </form>
+          </ul>
+
+          <button
+            type="button"
+            class="btn btn-danger"
+            data-bs-toggle="modal"
+            data-bs-target="#exampleModal"
+            data-bs-whatever="@getbootstrap"
+          >
+            Login
+          </button>
+        </div>
+      </div>
+
+      <div
+        class="modal fade"
+        id="exampleModal"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+        data-bs-theme="dark"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body" data-bs-theme="dark">
+              <form action="{% url 'login' %}" method="post">
+                {% csrf_token %}
+                <div class="mb-3">
+                  <label for="Designation" class="form-label" style="color: white;"
+                    >Designation</label
+                  >
+                  <select
+                    class="form-select"
+                    aria-label="Default select example"
+                    for="Designation" name="designation" required
+                  >
+                    <option selected>Select Your Designation</option>
+                    <option value="student">STUDENT</option>
+                    <option value="tpo">TPO</option>
+                    <option value="admin">ADMIN</option>
+                  </select>
+                </div>
+
+                <div class="mb-3">
+                  <label for="email" class="form-label" style="color: white;"
+                    >Email Id</label
+                  >
+                  
+                <input type="text" class="form-control" id="email" name="username" placeholder="htno@sru.edu.in" required>
+                </div>
+                <div class="mb-3">
+                  <label for="password" class="form-label" style="color: white;"
+                    >Password</label
+                  >
+                  
+                <input type="password" class="form-control" id="password" name="password" placeholder="Enter your password" required>
+                </div>
+             
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Close
+              </button>
+              <button type="submit" class="btn btn-primary">
+                Login
+              </button>
+               </form>
+            </div>
+          </div>
         </div>
       </div>
     </nav>
-    {% block body %}
-    {% endblock %}
+
+    {% block body %} {% endblock %}
+    <main class="container">
+      <div id="carouselExample" class="carousel slide">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+      <img src="https://algorithmicglobal.com/wp-content/uploads/2020/07/linkedin-ads-the-small-business-guide-to-getting-started.jpg" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="https://algorithmicglobal.com/wp-content/uploads/2020/07/linkedin-ads-the-small-business-guide-to-getting-started.jpg" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="https://algorithmicglobal.com/wp-content/uploads/2020/07/linkedin-ads-the-small-business-guide-to-getting-started.jpg" class="d-block w-100" alt="...">
+    </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+    </main>
   </body>
 </html>

@@ -21,6 +21,8 @@ from student import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',views.index,name="index"),
+    path('login',views.my_login,name="login"),
     path('home',views.home,name="home"),
-    
+    path('tpo_dashboard',views.tpo_dashboard,name="tpo_dashboard"),
+    path('tpo_post_job',views.tpo_post_job,name="tpo_post_job"),
 ]

@@ -1,0 +1,68 @@
+{% extends 'tpo_base.html' %} {% load static %} {% block body %}
+<style>
+  .container {
+    margin-top: 15px;
+  }
+</style>
+<main class="container">
+  <form class="row g-3" action="{% url 'tpo_post_job' %}" method="post">
+    {% csrf_token %}
+    <div class="col-md-6">
+      <label for="inputEmail4" class="form-label">Name of the Internship</label>
+      <input
+        type="text"
+        class="form-control"
+        id="inputEmail4"
+        style="
+          background-repeat: no-repeat;
+          background-size: 20px;
+          background-position: 97% center;
+          cursor: auto;
+        "
+        data-temp-mail-org="0"
+        name="job_name"
+      />
+    </div>
+    <div class="col-md-6">
+      <label for="inputPassword4" class="form-label">Company Name</label>
+      <input
+        type="text"
+        class="form-control"
+        name="company_name"
+        id="inputPassword4"
+      />
+    </div>
+    <div class="col-md-6">
+      <label for="inputEmail4" class="form-label">Type</label>
+      <select
+        class="form-select"
+        aria-label="Default select example"
+        for="Designation"
+        name="job_type"
+        required
+      >
+        <option selected>Select Type of Job</option>
+        <option value="Intern-Apprentice">Intern & Apprentice</option>
+        <option value="Internship">Internship</option>
+        <option value="Apprenticeship">Apprenticeship</option>
+        <option value="Hackathon">Hackathon</option>
+        <option value="Coding competition">Coding competition</option>
+      </select>
+    </div>
+    <div class="col-md-6">
+      <label for="inputPassword4" class="form-label">Application Link</label>
+      <input type="url" name="job_url" class="form-control" id="job_url" />
+    </div>
+
+    <!-- <div class="col-12">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" id="gridCheck" />
+        <label class="form-check-label" for="gridCheck"> Check me out </label>
+      </div>
+    </div> -->
+    <div class="col-12">
+      <button type="submit" class="btn btn-primary">Post</button>
+    </div>
+  </form>
+</main>
+{% endblock %}
