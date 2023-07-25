@@ -80,6 +80,11 @@ DATABASES = {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     }
+}it 
+import dj_database_url
+
+DATABASES = {
+    'default': dj_database_url.parse('postgresql://postgres:7bTXJcKmQJYDgabOLCJP@containers-us-west-82.railway.app:7045/railway')
 }
 
 
