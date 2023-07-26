@@ -140,3 +140,8 @@ AUTHENTICATION_BACKENDS =[
                             'django.contrib.auth.backends.ModelBackend',
                         ]
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+
+
+CSRF_TRUSTED_ORIGINS = [
+    'https://ims.up.railway.app/',
+]
