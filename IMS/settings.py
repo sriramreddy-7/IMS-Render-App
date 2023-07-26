@@ -54,7 +54,7 @@ MIDDLEWARE = [
 ]
 
 CSRF_TRUSTED_ORIGINS = [
-    'https://ims.up.railway.app/',
+    'https://ims.up.railway.app',
 ]
 
 ROOT_URLCONF = 'IMS.urls'
