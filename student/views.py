@@ -3,7 +3,7 @@ from django.contrib.auth import authenticate,logout,login
 from django.http import HttpResponse
 from django.contrib.auth.models import User
 from student.models import Jobs,Std,SD2
-import pandas as pd
+# import pandas as pd
 # Create your views here.
 def index(request):
     return render(request,'index.html')
@@ -70,10 +70,10 @@ def student_dashboard(request):
 
 def data_store(request):
     # csv_file_path = r"C:\Users\sriramreddykoonadi\Project\IMS\IMS\CSE_25_DB.csv"
-    csv_file_path = r"C:\Users\sriramreddykoonadi\Downloads\SD-2_EZ.csv"
-    df = pd.read_csv(csv_file_path)
-    print(df.columns)
-    print(df.dtypes)
+    # csv_file_path = r"C:\Users\sriramreddykoonadi\Downloads\SD-2_EZ.csv"
+    # df = pd.read_csv(csv_file_path)
+    # print(df.columns)
+    # print(df.dtypes)
 
     '''for index, row in df.iterrows():
         hall_ticket_no = row['HALLTICKET_NO']
