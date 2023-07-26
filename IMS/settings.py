@@ -53,6 +53,10 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+CSRF_TRUSTED_ORIGINS = [
+    'https://ims.up.railway.app/',
+]
+
 ROOT_URLCONF = 'IMS.urls'
 
 TEMPLATES = [
@@ -82,7 +86,7 @@ WSGI_APPLICATION = 'IMS.wsgi.application'
 #         'ENGINE': 'django.db.backends.sqlite3',
 #         'NAME': BASE_DIR / 'db.sqlite3',
 #     }
-# }
+# }a
 import dj_database_url
 
 DATABASES = {
@@ -144,6 +148,3 @@ AUTHENTICATION_BACKENDS =[
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 
-CSRF_TRUSTED_ORIGINS = [
-    'https://ims.up.railway.app/',
-]
