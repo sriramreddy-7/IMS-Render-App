@@ -1,8 +1,11 @@
 from django.shortcuts import render ,redirect
 from django.contrib.auth import authenticate,logout,login
-from django.http import HttpResponse
+
 from django.contrib.auth.models import User
 from student.models import Jobs,Std,SD2
+from django.http import HttpResponse,HttpResponseRedirect
+from django.views.decorators.cache import cache_control
+from django.contrib.auth.decorators import login_required
 # import pandas as pd
 # Create your views here.
 def index(request):
@@ -153,3 +156,11 @@ def all_students(request):
 def sd2(request):
     std=SD2.objects.all()
     return render(request,'sd2.html',{'std':std})
+
+@cache_control(no_cache=True, must_revalidate=True)
+def logout_view(request):
+    logout(request)
+    response = HttpResponseRedirect('/')
+    response.delete_cookie('sessionid')
+    return response
+    
