@@ -1,6 +1,6 @@
 from django.shortcuts import render ,redirect
 from django.contrib.auth import authenticate,logout,login
-
+from django.db.models import Count
 from django.contrib.auth.models import User
 from student.models import Jobs,Std,SD2
 from django.http import HttpResponse,HttpResponseRedirect
@@ -29,7 +29,7 @@ def my_login(request):
                     # j=Jobs.objects.all()
                     # return render(request,'student_dashboard.html',{'j':j})
                 elif designation == 'tpo' :
-                    return render(request,'tpo_dashboard.html')
+                    return redirect('tpo_dashboard')
                 else:
                     return HttpResponse('<h1 style="color:blue;"> Login Sucessful to Admin dashbaord </h1>')
             else:
@@ -39,7 +39,11 @@ def my_login(request):
     
     
 def tpo_dashboard(request):
-    return render(request,'tpo_dashboard.html')
+    student_counts = Std.objects.values('branch', 'section').annotate(total_students=Count('hall_ticket_no'))
+    context = {
+        'student_counts': student_counts,
+    }
+    return render(request,'tpo_dashboard.html',context)
 
 def tpo_post_job(request):
     if request.method == 'POST':
