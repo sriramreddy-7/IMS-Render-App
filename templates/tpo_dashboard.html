@@ -1,34 +1,3 @@
 {% extends 'tpo_base.html' %} {% load static %} {% block body %}
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<main class="container">
-  <canvas id="studentChart" width="400" height="100"></canvas>
-
-  <script>
-    // Convert data to JSON format
-    var studentData = {
-        labels: [{% for data in student_counts %} "{{ data.branch }} | {{ data.section }}",{% endfor %}],
-        datasets: [{
-            label: 'Total Students',
-            data: [{% for data in student_counts %}{{ data.total_students }},{% endfor %}],
-            backgroundColor: 'rgba(75, 192, 192, 0.2)',
-            borderColor: 'rgba(75, 192, 192, 1)',
-            borderWidth: 1,
-        }]
-    };
-
-    // Create the chart
-    var ctx = document.getElementById('studentChart').getContext('2d');
-    var studentChart = new Chart(ctx, {
-        type: 'Bubble',
-        data: studentData,
-        options: {
-            scales: {
-                y: {
-                    beginAtZero: true
-                }
-            }
-        }
-    });
-  </script>
-</main>
+<h1>TPO DAsh</h1>
 {% endblock %}

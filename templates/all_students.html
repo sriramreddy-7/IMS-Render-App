@@ -1,37 +1,109 @@
-{% extends 'tpo_base.html' %}
-{% load static %} 
-{% block body %}
-<style>
-  .container {
-    margin-top: 15px;
-  }
-</style>
-<main class="container">
-  <table class="table">
-    <thead>
-      <tr class="table-danger">
-        <th scope="col">S.NO</th>
-        <th scope="col">HAll TICKET NO</th>
-        <th scope="col">STUDENT NAME</th>
-        <th scope="col">YEAR</th>
-        <th scope="col">BRANCH</th>
-        <th scope="col">SECTION</th>
-        <th scope="col">EMAIL ID</th>
-      </tr>
-    </thead>
-    <tbody>
-      {% for student in std %}
-      <tr class="table-success">
-        <th scope="row">{{ forloop.counter }}</th>
-        <td>{{ student.hall_ticket_no }}</td>
-        <td>{{ student.student_name }}</td>
-        <td> III/I </td>
-        <td>{{ student.branch }}</td>
-        <td>{{ student.section }}</td>
-        <td>{{ student.email_id }}</td>
-      </tr>
-      {% endfor %}
-    </tbody>
-  </table>
-</main>
+{% extends 'tpo_base.html' %} {% load static %} {% block body %}
+<div class="container-fluid py-4">
+  <div class="row">
+    <div class="col-12">
+      <div class="card mb-4">
+        <div class="card-header pb-0">
+          <h6>CSE_21_25</h6>
+        </div>
+        <div class="card-body px-0 pt-0 pb-2">
+          <div class="table-responsive p-0">
+            <table class="table align-items-center justify-content-center mb-0">
+              <thead>
+                <tr>
+                  <th
+                    class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7"
+                  >
+                    S.NO
+                  </th>
+                  <th
+                    class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2"
+                  >
+                    HAll TICKET NO
+                  </th>
+                  <th
+                    class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2"
+                  >
+                    STUDENT NAME
+                  </th>
+                  <th
+                    class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2"
+                  >
+                    YEAR
+                  </th>
+                  <th
+                    class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2"
+                  >
+                    BRANCH
+                  </th>
+                  <th
+                    class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2"
+                  >
+                    SECTION
+                  </th>
+                  <th
+                    class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2"
+                  >
+                    EMAIL ID
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for student in std %}
+
+                <tr>
+                  <td>
+                    <div class="d-flex px-2">
+                      <!-- <div>
+                            <img src="../assets/img/small-logos/logo-spotify.svg" class="avatar avatar-sm rounded-circle me-2" alt="spotify">
+                          </div> -->
+                      <div class="my-auto">
+                        <h6 class="mb-0 text-sm">{{ forloop.counter }}</h6>
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <p class="text-sm font-weight-bold mb-0">
+                      {{ student.hall_ticket_no }}
+                    </p>
+                  </td>
+                  <td>
+                    <span class="text-xs font-weight-bold"
+                      >{{ student.student_name }}</span
+                    >
+                  </td>
+                  <td>
+                    <span class="text-xs font-weight-bold"> III/I</span>
+                  </td>
+                  <td>
+                    <span class="text-xs font-weight-bold"
+                      >{{ student.branch }}</span
+                    >
+                  </td>
+                  <td>
+                    <span class="text-xs font-weight-bold"
+                      >{{ student.section }}</span
+                    >
+                  </td>
+                  <td>
+                    <span class="text-xs font-weight-bold"
+                      >{{ student.email_id }}</span
+                    >
+                  </td>
+
+                  <!-- <td class="align-middle">
+                    <button class="btn btn-link text-secondary mb-0">
+                      <i class="fa fa-ellipsis-v text-xs"></i>
+                    </button>
+                  </td> -->
+                </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 {% endblock %}
