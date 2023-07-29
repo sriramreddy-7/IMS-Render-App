@@ -33,4 +33,5 @@ urlpatterns = [
     path('logout_view',views.logout_view,name="logout_view"),
     path('info',views.info,name="info"),
     path('all',views.all,name="all"),
+    path('job_listing',views.job_listing,name="job_listing"),
 ]

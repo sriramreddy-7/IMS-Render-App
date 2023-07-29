@@ -65,14 +65,14 @@ def tpo_post_job(request):
         }
         job=Jobs.objects.create(job_name=job_name,company_name=company_name,job_type=job_type,job_url=job_url,deadline_date=deadline_date)
         job.save()
-        j=Jobs.objects.all()
-        return render(request,'student_dashboard.html',{'j':j})
+        jobs=Jobs.objects.all()
+        return render(request,'job_listing.html',{'jobs':jobs})
     else:
         return render(request,'tpo_post_job.html')
     
 def student_dashboard(request):
-    j=Jobs.objects.all()
-    return render(request,'student_dashboard.html',{'j':j})
+    jobs=Jobs.objects.all()
+    return render(request,'student_dashboard.html',{'jobs':jobs})
 
 
 def data_store(request):
@@ -175,3 +175,8 @@ def info(request):
 def all(request):
     std=Std.objects.all()
     return render(request,'all.html',{'std':std})
+
+
+def job_listing(request):
+    jobs=Jobs.objects.all()
+    return render(request,'job_listing.html',{'jobs':jobs})

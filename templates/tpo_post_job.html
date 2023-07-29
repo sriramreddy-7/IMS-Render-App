@@ -1,4 +1,75 @@
 {% extends 'tpo_base.html' %} {% load static %} {% block body %}
+<style>
+
+    /* CSS styles for the custom select dropdown */
+
+    /* Hide the default dropdown arrow */
+    .custom-select select {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      /* Add custom arrow background-image (optional) */
+      background-image: url("path/to/custom_arrow.png");
+      background-position: right center;
+      background-repeat: no-repeat;
+      /* Add some padding to give space for the custom arrow */
+      padding-right: 30px;
+      /* Add some basic styles */
+      font-size: 16px;
+      font-family: Arial, sans-serif;
+      border: none;
+      outline: none;
+      background-color: #f7f7f7;
+      color: #333;
+      border-radius: 6px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      cursor: pointer;
+      transition: background-color 0.2s, box-shadow 0.2s;
+    }
+
+    /* Style the custom dropdown container */
+    .custom-select {
+      position: relative;
+      /* Add some width to the container to control its size */
+      width: 200px;
+    }
+
+    /* Style the options dropdown */
+    .custom-select select:focus {
+      /* Add a box-shadow or border to the dropdown when focused */
+      box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+      /* Change background color when focused */
+      background-color: #fff;
+    }
+
+    /* Style the options in the dropdown */
+    .custom-select option {
+      /* Add background and text color for the options */
+      background-color: #f7f7f7;
+      color: #333;
+      /* Add padding and margin to improve visual appearance */
+      padding: 10px;
+      margin: 5px 0;
+      border-radius: 4px;
+      /* Add hover styles for the options */
+      transition: background-color 0.2s;
+    }
+
+    /* Hover styles for the options */
+    .custom-select option:hover {
+      background-color: #f0f0f0;
+    }
+
+    /* Optional styling for the custom dropdown indicator */
+    .custom-select::after {
+      content: "\25BC"; /* Downward-pointing triangle (▼) */
+      position: absolute;
+      top: 50%;
+      right: 10px;
+      transform: translateY(-50%);
+      font-size: 12px;
+    }
+  </style>
 
 <main class="container">
   <form class="row g-3" action="{% url 'tpo_post_job' %}" method="post">
@@ -31,7 +102,7 @@
     <div class="col-md-6">
       <label for="inputEmail4" class="form-label">Type</label>
       <select
-        class="form-select"
+        class="custom-select"
         aria-label="Default select example"
         for="Designation"
         name="job_type"
