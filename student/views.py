@@ -9,7 +9,7 @@ from django.contrib.auth.decorators import login_required
 # import pandas as pd
 # Create your views here.
 def index(request):
-    return render(request,'index.html')
+    return render(request,'login.html')
 
 
 def home(request):
