@@ -32,4 +32,5 @@ urlpatterns = [
     path('sd2',views.sd2,name="sd2"),
     path('logout_view',views.logout_view,name="logout_view"),
     path('info',views.info,name="info"),
+    path('all',views.all,name="all"),
 ]

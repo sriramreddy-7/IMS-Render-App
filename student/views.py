@@ -171,3 +171,7 @@ def logout_view(request):
     
 def info(request):
     return render(request,'info.html')
+
+def all(request):
+    std=Std.objects.all()
+    return render(request,'all.html',{'std':std})
