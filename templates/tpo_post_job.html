@@ -1,9 +1,5 @@
 {% extends 'tpo_base.html' %} {% load static %} {% block body %}
-<style>
-  .container {
-    margin-top: 15px;
-  }
-</style>
+
 <main class="container">
   <form class="row g-3" action="{% url 'tpo_post_job' %}" method="post">
     {% csrf_token %}
@@ -55,7 +51,12 @@
     </div>
     <div class="col-md-12">
       <label for="deadline_date" class="form-label">Application Deadline</label>
-      <input type="date" name="deadline_date" class="form-control" id="deadline_date" />
+      <input
+        type="date"
+        name="deadline_date"
+        class="form-control"
+        id="deadline_date"
+      />
     </div>
 
     <!-- <div class="col-12">
@@ -64,6 +65,13 @@
         <label class="form-check-label" for="gridCheck"> Check me out </label>
       </div>
     </div> -->
+    <br />
+    <br />
+
+    <br />
+
+    <br />
+
     <div class="col-12">
       <button type="submit" class="btn btn-primary">Post</button>
     </div>
