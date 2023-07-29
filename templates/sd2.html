@@ -20,16 +20,15 @@
     </thead>
     <tbody>
       {% for student in std %}
-      <tr class="table-success">
-        <th scope="row">{{ forloop.counter }}</th>
-        <td>{{ student.hall_ticket_no }}</td>
-        <td>{{ student.student_name }}</td>
-        <td>{{ student.email_id }}</td>
-        <td>{{ student.branch }}</td>
-        <td>{{ student.training_type }}</td>
-        <td>{{ student.venue }}</td>
-        
-      </tr>
+        <tr class="table-success">
+            <th scope="row">{{ forloop.counter }}</th>
+            <td>{{ student.hall_ticket_no }}</td>
+            <td>{{ student.student_name }}</td>
+            <td>{{ student.email_id }}</td>
+            <td>{{ student.branch }}</td>
+            <td>{{ student.training_type }}</td>
+            <td>{{ student.venue }}</td>
+        </tr>
       {% endfor %}
     </tbody>
   </table>
