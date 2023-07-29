@@ -168,3 +168,6 @@ def logout_view(request):
     response.delete_cookie('sessionid')
     return response
     
+    
+def info(request):
+    return render(request,'info.html')
