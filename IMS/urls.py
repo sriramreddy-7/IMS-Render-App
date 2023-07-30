@@ -34,4 +34,5 @@ urlpatterns = [
     path('info',views.info,name="info"),
     path('all',views.all,name="all"),
     path('job_listing',views.job_listing,name="job_listing"),
+    path('all_btech_25',views.all_btech_25,name="all_btech_25"),
 ]

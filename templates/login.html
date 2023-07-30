@@ -7,15 +7,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-<<<<<<< HEAD
-    <title>IMS</title>
-=======
 
-    <title>IMS-Login</title>
->>>>>>> 18d21ba59b84795e52f8c87e120694d69a5ef6e9
+   <title>IMS-Login</title>
+
 
     <!-- Custom fonts for this template-->
     <link href="{%  static 'vendor/fontawesome-free/css/all.min.css' %}" rel="stylesheet" type="text/css">
+     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=FontName">
     <link
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet">
@@ -24,7 +22,72 @@
     <link href="{% static 'css/sb-admin-2.min.css' %}" rel="stylesheet">
 
 </head>
+<style>
+/* ===== Google Font Import - Poppins ===== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap');
 
+*{
+   
+    font-family: 'Poppins', sans-serif;
+}
+
+.select-menu{
+    width: 380px;
+    margin: 140px auto;
+}
+.select-menu .select-btn{
+    display: flex;
+    height: 55px;
+    background: #fff;
+    padding: 20px;
+    font-size: 18px;
+    font-weight: 400;
+    border-radius: 8px;
+    align-items: center;
+    cursor: pointer;
+    justify-content: space-between;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
+.select-btn i{
+    font-size: 25px;
+    transition: 0.3s;
+}
+.select-menu.active .select-btn i{
+    transform: rotate(-180deg);
+}
+.select-menu .options{
+    position: relative;
+    padding: 20px;
+    margin-top: 10px;
+    border-radius: 8px;
+    background: #fff;
+    box-shadow: 0 0 3px rgba(0,0,0,0.1);
+    display: none;
+}
+.select-menu.active .options{
+    display: block;
+}
+.options .option{
+    display: flex;
+    height: 55px;
+    cursor: pointer;
+    padding: 0 16px;
+    border-radius: 8px;
+    align-items: center;
+    background: #fff;
+}
+.options .option:hover{
+    background: #F2F2F2;
+}
+.option i{
+    font-size: 25px;
+    margin-right: 12px;
+}
+.option .option-text{
+    font-size: 18px;
+    color: #333;
+}
+</style>
 <body class="bg-gradient-primary">
 
     <div class="container">
@@ -35,6 +98,7 @@
             <div class="col-xl-10 col-lg-12 col-md-9">
 
                 <div class="card o-hidden border-0 shadow-lg my-5">
+                    <div class="card-header" style="text-align: center;color:aliceblue;background-color:coral;font-family: 'Roboto Slab', serif;font-size: 16px; line-height: 1.5;"><h4>Job Portal</h4></div>
                     <div class="card-body p-0">
                         <!-- Nested Row within Card Body -->
                         <div class="row">
@@ -50,9 +114,10 @@
                                             <form action="{% url 'login' %}" method="post">
                                               {% csrf_token %}
                                               <div class="mb-3">
-                                                <label for="Designation" class="form-label" style="color: rgb(1, 98, 137);"
+                                                <label for="Designation"  class="sBtn-text" style="color: rgb(1, 98, 137);"
                                                   >Designation</label
                                                 >
+                                               
                                                 <select
                                                   class="form-select"
                                                   aria-label="Default select example"
@@ -63,20 +128,21 @@
                                                   <option value="tpo">TPO</option>
                                                   <option value="admin">ADMIN</option>
                                                 </select>
-                                              </div>
+                                                </div>
+                                             
 
                                         <div class="form-group">
                                             <input type="email" class="form-control form-control-user"
                                                 id="exampleInputEmail" aria-describedby="emailHelp"
-                                                placeholder="Enter Email Address...">
+                                                placeholder="Enter UserName...">
                                         </div>
                                         <div class="form-group">
                                             <input type="password" class="form-control form-control-user"
                                                 id="exampleInputPassword" placeholder="Password">
                                         </div>
-                                        <a href="index.html" class="btn btn-primary btn-user btn-block">
+                                        <button type="submit" class="btn btn-primary btn-user btn-block">
                                             Login
-                                        </a>
+                                        </button>
                                         <hr>
                                     </form>
                                     <hr>
@@ -91,7 +157,23 @@
         </div>
 
     </div>
+<script>
+const optionMenu = document.querySelector(".select-menu"),
+       selectBtn = optionMenu.querySelector(".select-btn"),
+       options = optionMenu.querySelectorAll(".option"),
+       sBtn_text = optionMenu.querySelector(".sBtn-text");
 
+selectBtn.addEventListener("click", () => optionMenu.classList.toggle("active"));       
+
+options.forEach(option =>{
+    option.addEventListener("click", ()=>{
+        let selectedOption = option.querySelector(".option-text").innerText;
+        sBtn_text.innerText = selectedOption;
+
+        optionMenu.classList.remove("active");
+    });
+});
+</script>
     <!-- Bootstrap core JavaScript-->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>

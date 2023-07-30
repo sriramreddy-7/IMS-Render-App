@@ -80,10 +80,18 @@
           >
             <div class="bg-white py-2 collapse-inner rounded">
               <h6 class="collapse-header">Student Details</h6>
-              <a class="collapse-item" href="{% url 'tpo_post_job' %}">Post A Job</a>
+              <a class="collapse-item" href="{% url 'tpo_post_job' %}"
+                >Post A Job</a
+              >
               <a class="collapse-item" href="{% url 'all' %}">All Students</a>
+              <a class="collapse-item" href="{% url 'all_btech_25' %}"
+                >All Students Dept Wise</a
+              >
               <a class="collapse-item" href="{% url 'sd2' %}">SD2</a>
-              <a class="collapse-item" href="{% url 'job_listing' %}">JOB Listing</a>
+              <a class="collapse-item" href="{% url 'job_listing' %}"
+                >JOB Listing</a
+              >
+              <a class="collapse-item" href="{% url  'data_store' %}">DS</a>
             </div>
           </div>
         </li>
