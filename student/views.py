@@ -76,8 +76,7 @@ def tpo_post_job(request):
 
 @login_required       
 def student_dashboard(request):
-    
-    jobs=Jobs.objects.all()
+    jobs=Jobs.objects.all().order_by('post_date').reverse()
     return render(request,'student_dashboard.html',{'jobs':jobs})
 
 
