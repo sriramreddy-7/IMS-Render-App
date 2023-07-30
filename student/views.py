@@ -6,7 +6,7 @@ from student.models import Jobs,Std,SD2,btech_25
 from django.http import HttpResponse,HttpResponseRedirect
 from django.views.decorators.cache import cache_control
 from django.contrib.auth.decorators import login_required
-import pandas as pd
+# import pandas as pd
 # Create your views here.
 def index(request):
     return render(request,'login.html')
@@ -78,11 +78,11 @@ def student_dashboard(request):
 def data_store(request):
     # csv_file_path = r"C:\Users\sriramreddykoonadi\Project\IMS\IMS\CSE_25_DB.csv"
     # csv_file_path = r"C:\Users\sriramreddykoonadi\Downloads\SD-2_EZ.csv"
-    csv_file_path=r"C:\Users\sriramreddykoonadi\OneDrive - SR University\Bachelor of Technology\Database\References'\B.TECH_ALL_DEPTS_25(1).csv"
-    df = pd.read_csv(csv_file_path)
-    print(df.columns)
-    print(df.dtypes)
-    print(df.head())
+    # csv_file_path=r"C:\Users\sriramreddykoonadi\OneDrive - SR University\Bachelor of Technology\Database\References'\B.TECH_ALL_DEPTS_25(1).csv"
+    # df = pd.read_csv(csv_file_path)
+    # print(df.columns)
+    # print(df.dtypes)
+    # print(df.head())
 
     '''for index, row in df.iterrows():
         hall_ticket_no = row['HALLTICKET_NO']
