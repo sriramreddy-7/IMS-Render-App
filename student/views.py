@@ -251,7 +251,7 @@ def change_password(request):
                 update_session_auth_hash(request, request.user)
 
                 messages.success(request, 'Password successfully changed.')
-                return redirect('login') 
+                return redirect('logout_view') 
             else:
                 messages.error(request, 'New passwords do not match.')
         else:
