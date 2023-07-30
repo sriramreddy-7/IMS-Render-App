@@ -1,1 +1,1 @@
-web: gunicorn IMS.wsgi --log-file -
+web: gunicorn IMS.wsgi --log-file - 
