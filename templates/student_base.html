@@ -87,6 +87,9 @@
               <!-- <h6 class="collapse-header">Custom C</h6> -->
               <a class="collapse-item" href="#">My Applications</a>
               <a class="collapse-item" href="#">My Offers</a>
+              <a class="collapse-item" href="{% url 'change_password' %}"
+                >Change Password</a
+              >
             </div>
           </div>
         </li>
@@ -112,13 +115,13 @@
           >
             <div class="bg-white py-2 collapse-inner rounded">
               <!-- <h6 class="collapse-header">Custom Utilities:</h6> -->
-              <a class="collapse-item" href="utilities-color.html"
+              <a class="collapse-item" href="#"
                 >Internships Listings</a
               >
-              <a class="collapse-item" href="utilities-border.html"
+              <a class="collapse-item" href="#"
                 >Apply for Internships</a
               >
-                <!-- <a class="collapse-item" href="utilities-animation.html"
+              <!-- <a class="collapse-item" href="utilities-animation.html"
                     >Animations</a
                 >
                 <a class="collapse-item" href="utilities-other.html">Other</a> -->
@@ -127,13 +130,13 @@
         </li>
 
         <!-- Divider -->
-        <hr class="sidebar-divider" />
+        <!-- <hr class="sidebar-divider" /> -->
 
         <!-- Heading -->
-        <div class="sidebar-heading">Addons</div>
+        <!-- <div class="sidebar-heading">Addons</div> -->
 
         <!-- Nav Item - Pages Collapse Menu -->
-        <li class="nav-item">
+        <!-- <li class="nav-item">
           <a
             class="nav-link collapsed"
             href="#"
@@ -164,34 +167,34 @@
               <a class="collapse-item" href="blank.html">Blank Page</a>
             </div>
           </div>
-        </li>
+        </li> -->
 
         <!-- Nav Item - Charts -->
-        <li class="nav-item">
+        <!-- <li class="nav-item">
           <a class="nav-link" href="charts.html">
             <i class="fas fa-fw fa-chart-area"></i>
             <span>Charts</span></a
           >
-        </li>
+        </li> -->
 
         <!-- Nav Item - Tables -->
-        <li class="nav-item">
+        <!-- <li class="nav-item">
           <a class="nav-link" href="tables.html">
             <i class="fas fa-fw fa-table"></i>
             <span>Tables</span></a
           >
-        </li>
+        </li> -->
 
         <!-- Divider -->
         <hr class="sidebar-divider d-none d-md-block" />
 
         <!-- Sidebar Toggler (Sidebar) -->
-        <div class="text-center d-none d-md-inline">
+        <!-- <div class="text-center d-none d-md-inline">
           <button class="rounded-circle border-0" id="sidebarToggle"></button>
-        </div>
+        </div> -->
 
         <!-- Sidebar Message -->
-        <div class="sidebar-card d-none d-lg-flex">
+        <!-- <div class="sidebar-card d-none d-lg-flex">
           <img
             class="sidebar-card-illustration mb-2"
             src="img/undraw_rocket.svg"
@@ -206,7 +209,7 @@
             href="https://startbootstrap.com/theme/sb-admin-pro"
             >Upgrade to Pro!</a
           >
-        </div>
+        </div> -->
       </ul>
       <!-- End of Sidebar -->
 
@@ -464,12 +467,10 @@
                   aria-expanded="false"
                 >
                   <span class="mr-2 d-none d-lg-inline text-gray-600 small"
-                    >Douglas McGee</span
+                    >{{request.user.first_name }} {{request.user.last_name }}</span
                   >
-                  <img
-                    class="img-profile rounded-circle"
-                    src="img/undraw_profile.svg"
-                  />
+                  
+                  <img width="67" height="67" class="img-profile rounded-circle" src="https://img.icons8.com/external-others-inmotus-design/67/external-Online-avatars-others-inmotus-design.png" alt="external-Online-avatars-others-inmotus-design"/>
                 </a>
                 <!-- Dropdown - User Information -->
                 <div
@@ -491,7 +492,7 @@
                   <div class="dropdown-divider"></div>
                   <a
                     class="dropdown-item"
-                    href="#"
+                    href="{% url 'logout_view' %}"
                     data-toggle="modal"
                     data-target="#logoutModal"
                   >
@@ -558,7 +559,7 @@
             >
               Cancel
             </button>
-            <a class="btn btn-primary" href="login.html">Logout</a>
+            <a class="btn btn-primary" href="{% url 'logout_view' %}">Logout</a>
           </div>
         </div>
       </div>

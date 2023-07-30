@@ -148,3 +148,4 @@ AUTHENTICATION_BACKENDS =[
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 
+LOGIN_URL = 'login'
