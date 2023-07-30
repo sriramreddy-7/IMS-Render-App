@@ -196,23 +196,25 @@ a {
                                     <div class="text-center">
                                         <h1 class="h4 text-gray-900 mb-4">SR University</h1>
                                     </div>
-                                    
-
                                         <div class="modal-body" data-bs-theme="dark">
-                                            <form  method="post" action="{% url 'login' %}" class="user">
+                                   <form  method="post" action="{% url 'login' %}" class="user">
                                               {% csrf_token %}
-                                              <div class= "container">
-                                                <div class="select">
-                                                  <select>
-                                                    <option value="1">Americano</option>
-                                                    <option value="2">Latte</option>
-                                                    <option value="3">Green Tea</option>
-                                                  </select>
+                                              <div class="mb-3">
+                                                <label for="designation" style="color: rgb(1, 98, 137);text-align:center;"
+                                                  >Designation</label
+                                                >
+                                               
+                                                <select
+                                                  class="form-select"
+                                                  aria-label="Default select example"
+                                                  for="Designation" name="designation" required
+                                                >
+                                                  <option selected>Select Your Designation</option>
+                                                  <option value="student">STUDENT</option>
+                                                  <option value="tpo">TPO</option>
+                                                  <option value="admin">ADMIN</option>
+                                                </select>
                                                 </div>
-                                                <div class = "down_note">
-                                                </div>
-                                              </div> 
-                                              <div class="line"> </div>
                                         <div class="form-group">
                                             <input type="text" class="form-control form-control-user"
                                                 id="exampleInputEmail" 
@@ -230,6 +232,8 @@ a {
                                         </button>
                                         <hr>
                                     </form>
+
+
                                     <hr>
                                 </div>
                             </div>
