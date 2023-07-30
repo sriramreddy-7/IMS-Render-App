@@ -108,13 +108,13 @@
                                     <div class="text-center">
                                         <h1 class="h4 text-gray-900 mb-4">SR University</h1>
                                     </div>
-                                    <form class="user">
+                                    
 
                                         <div class="modal-body" data-bs-theme="dark">
-                                            <form action="{% url 'login' %}" method="post">
+                                            <form  method="post" action="{% url 'login' %}" class="user">
                                               {% csrf_token %}
                                               <div class="mb-3">
-                                                <label for="Designation"  class="sBtn-text" style="color: rgb(1, 98, 137);"
+                                                <label for="Designation" style="color: rgb(1, 98, 137);"
                                                   >Designation</label
                                                 >
                                                
@@ -129,16 +129,17 @@
                                                   <option value="admin">ADMIN</option>
                                                 </select>
                                                 </div>
-                                             
-
                                         <div class="form-group">
-                                            <input type="email" class="form-control form-control-user"
-                                                id="exampleInputEmail" aria-describedby="emailHelp"
+                                            <input type="text" class="form-control form-control-user"
+                                                id="exampleInputEmail" 
+                                                name="username"
                                                 placeholder="Enter UserName...">
+                                                
                                         </div>
                                         <div class="form-group">
                                             <input type="password" class="form-control form-control-user"
-                                                id="exampleInputPassword" placeholder="Password">
+                                            name="password"    
+                                            id="exampleInputPassword" placeholder="Password">
                                         </div>
                                         <button type="submit" class="btn btn-primary btn-user btn-block">
                                             Login
