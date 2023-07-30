@@ -18,6 +18,7 @@ def home(request):
 
 def my_login(request):
     if request.method =='POST':
+            print("Post Requested Recevied!")
             designation = request.POST['designation']
             username = request.POST.get('username')
             password = request.POST.get('password')
@@ -33,9 +34,9 @@ def my_login(request):
                 else:
                     return HttpResponse('<h1 style="color:blue;"> Login Sucessful to Admin dashbaord </h1>')
             else:
-                return render(request,'index.html')
+                return render(request,'login.html')
     else:            
-        return render(request,'index.html')
+        return render(request,'login.html')
     
     
 def tpo_dashboard(request):
