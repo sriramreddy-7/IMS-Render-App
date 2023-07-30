@@ -33,8 +33,10 @@ def my_login(request):
                     return redirect('student_dashboard')
                 elif designation == 'tpo' and username=="tpo":
                     return redirect('tpo_dashboard')
-                else:
+                elif designation == 'admin' and username=="admin":
                     return HttpResponse('<h1 style="color:blue;"> Login Sucessful to Admin dashbaord </h1>')
+                else:
+                    return HttpResponse('<h1 style="color:red;"> Please Select Designation </h1>')
             else:
                 return render(request,'login.html')
     else:            
@@ -76,7 +78,7 @@ def tpo_post_job(request):
 
 @login_required       
 def student_dashboard(request):
-    jobs=Jobs.objects.all().order_by('post_date').reverse()
+    jobs=Jobs.objects.all().order_by('post_date')
     return render(request,'student_dashboard.html',{'jobs':jobs})
 
 
