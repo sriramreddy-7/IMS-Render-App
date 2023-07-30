@@ -1,6 +1,11 @@
 {% extends 'student_base.html' %} {% load static %} {% block body %}
-{% for job in jobs %}
-<div class="row">
+
+<style>
+  .card {
+    margin-left: 5px;
+  }
+</style>
+<!-- <div class="row">
   <div class="col-lg-12">
     <div class="card shadow mb-4">
       <div class="card-header py-3">
@@ -17,7 +22,21 @@
       </div>
     </div>
   </div>
+  </div> -->
+{% for job in jobs %}
+<div class="row">
+  <div class="col-lg-12">
+    <div class="card shadow mb-4">
+      <h5 class="card-header">{{job.job_name }}</h5>
+      <div class="card-body">
+        <h5 class="card-title">{{job.cpmpany_name}}</h5>
+        <p class="card-text">
+          {{ job.job_type }} | {{ job.post_date }} | {{ job.deadline_date }}
+        </p>
+        <a href="{{ job.job_url }}" class="btn btn-primary">Apply Now!</a>
+      </div>
+    </div>
   </div>
+</div>
 
-  {% endfor %} 
-  {% endblock %}
+{% endfor %} {% endblock %}
