@@ -87,9 +87,6 @@
               <!-- <h6 class="collapse-header">Custom C</h6> -->
               <a class="collapse-item" href="#">My Applications</a>
               <a class="collapse-item" href="#">My Offers</a>
-              <a class="collapse-item" href="{% url 'change_password' %}"
-                >Change Password</a
-              >
             </div>
           </div>
         </li>
@@ -115,12 +112,8 @@
           >
             <div class="bg-white py-2 collapse-inner rounded">
               <!-- <h6 class="collapse-header">Custom Utilities:</h6> -->
-              <a class="collapse-item" href="#"
-                >Internships Listings</a
-              >
-              <a class="collapse-item" href="#"
-                >Apply for Internships</a
-              >
+              <a class="collapse-item" href="#">Internships Listings</a>
+              <a class="collapse-item" href="#">Apply for Internships</a>
               <!-- <a class="collapse-item" href="utilities-animation.html"
                     >Animations</a
                 >
@@ -252,7 +245,7 @@
             <!-- Topbar Navbar -->
             <ul class="navbar-nav ml-auto">
               <!-- Nav Item - Search Dropdown (Visible Only XS) -->
-              <li class="nav-item dropdown no-arrow d-sm-none">
+              <!-- <li class="nav-item dropdown no-arrow d-sm-none">
                 <a
                   class="nav-link dropdown-toggle"
                   href="#"
@@ -264,7 +257,7 @@
                 >
                   <i class="fas fa-search fa-fw"></i>
                 </a>
-                <!-- Dropdown - Messages -->
+                
                 <div
                   class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in"
                   aria-labelledby="searchDropdown"
@@ -286,10 +279,10 @@
                     </div>
                   </form>
                 </div>
-              </li>
+              </li> 
 
               <!-- Nav Item - Alerts -->
-              <li class="nav-item dropdown no-arrow mx-1">
+              <!-- <li class="nav-item dropdown no-arrow mx-1">
                 <a
                   class="nav-link dropdown-toggle"
                   href="#"
@@ -300,10 +293,10 @@
                   aria-expanded="false"
                 >
                   <i class="fas fa-bell fa-fw"></i>
-                  <!-- Counter - Alerts -->
+                  
                   <span class="badge badge-danger badge-counter">3+</span>
                 </a>
-                <!-- Dropdown - Alerts -->
+               
                 <div
                   class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
                   aria-labelledby="alertsDropdown"
@@ -351,10 +344,10 @@
                     >Show All Alerts</a
                   >
                 </div>
-              </li>
+              </li> -->
 
               <!-- Nav Item - Messages -->
-              <li class="nav-item dropdown no-arrow mx-1">
+              <!-- <li class="nav-item dropdown no-arrow mx-1">
                 <a
                   class="nav-link dropdown-toggle"
                   href="#"
@@ -365,10 +358,10 @@
                   aria-expanded="false"
                 >
                   <i class="fas fa-envelope fa-fw"></i>
-                  <!-- Counter - Messages -->
+                 
                   <span class="badge badge-danger badge-counter">7</span>
                 </a>
-                <!-- Dropdown - Messages -->
+              
                 <div
                   class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
                   aria-labelledby="messagesDropdown"
@@ -451,11 +444,10 @@
                     >Read More Messages</a
                   >
                 </div>
-              </li>
+              </li> -->
 
               <div class="topbar-divider d-none d-sm-block"></div>
 
-              <!-- Nav Item - User Information -->
               <li class="nav-item dropdown no-arrow">
                 <a
                   class="nav-link dropdown-toggle"
@@ -467,12 +459,19 @@
                   aria-expanded="false"
                 >
                   <span class="mr-2 d-none d-lg-inline text-gray-600 small"
-                    >{{request.user.first_name }} {{request.user.last_name }}</span
+                    >{{request.user.first_name }} {{request.user.last_name
+                    }}</span
                   >
-                  
-                  <img width="67" height="67" class="img-profile rounded-circle" src="https://img.icons8.com/external-others-inmotus-design/67/external-Online-avatars-others-inmotus-design.png" alt="external-Online-avatars-others-inmotus-design"/>
+
+                  <img
+                    width="67"
+                    height="67"
+                    class="img-profile rounded-circle"
+                    src="https://img.icons8.com/external-others-inmotus-design/67/external-Online-avatars-others-inmotus-design.png"
+                    alt="external-Online-avatars-others-inmotus-design"
+                  />
                 </a>
-                <!-- Dropdown - User Information -->
+
                 <div
                   class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                   aria-labelledby="userDropdown"
@@ -485,9 +484,9 @@
                     <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
                     Settings
                   </a>
-                  <a class="dropdown-item" href="#">
+                  <a class="dropdown-item" href="{% url 'change_password' %}">
                     <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
-                    Activity Log
+                    Change Password
                   </a>
                   <div class="dropdown-divider"></div>
                   <a
@@ -559,7 +558,7 @@
             >
               Cancel
             </button>
-            <a class="btn btn-primary" href="{% url 'logout_view' %}">Logout</a>
+            <a class="btn btn-danger" href="{% url 'logout_view' %}">Logout</a>
           </div>
         </div>
       </div>
