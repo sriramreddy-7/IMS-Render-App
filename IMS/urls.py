@@ -35,6 +35,6 @@ urlpatterns = [
     path('all',views.all,name="all"),
     path('job_listing',views.job_listing,name="job_listing"),
     path('all_btech_25',views.all_btech_25,name="all_btech_25"),
-    path('bulk_users',views.bulk_users,name="bulk_users"),
+    # path('bulk_users',views.bulk_users,name="bulk_users"),
     path('change_password/', views.change_password, name='change_password'),
 ]

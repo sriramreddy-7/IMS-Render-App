@@ -35,7 +35,7 @@ def my_login(request):
                     return redirect('student_dashboard')
                     # j=Jobs.objects.all()
                     # return render(request,'student_dashboard.html',{'j':j})
-                elif designation == 'tpo' :
+                elif designation == 'tpo' and username=="tpo":
                     return redirect('tpo_dashboard')
                 else:
                     return HttpResponse('<h1 style="color:blue;"> Login Sucessful to Admin dashbaord </h1>')
@@ -201,40 +201,6 @@ def job_listing(request):
 def all_btech_25(request):
     std=btech_25.objects.all()
     return render(request,'btech_25.html',{'std':std})
-
-def bulk_users(request):
-    # csv_file_path=r"C:\Users\sriramreddykoonadi\OneDrive - SR University\Bachelor of Technology\Database\References'\beta_users_account.csv"
-    # df = pd.read_csv(csv_file_path)
-    # print(df.columns)
-    # print(df.dtypes)
-    # print(df.head())
-    # for index, row in df.iterrows():
-    #     username = row['username']
-    #     firstname = row['first name']
-    #     lastname = row['last name']
-    #     email = row['email']
-    #     password=row['password']
-        
-
-    #     # Adjust and format the data as needed
-    #     firstname = str(firstname).title().strip()
-    #     lastname = str(lastname).title().strip() # Capitalize student name and remove leading/trailing spaces
-    #     username = str( username).strip()
-    #     email=str(email).strip()
-    #     password=str(password).strip()
-    #     # venue=venue.strip()
-    #     User.objects.create_user(username=username, email=email, password=password,first_name=firstname,last_name=lastname)
-    #     print(username)
-        # obj = btech_25(
-        #     hall_ticket_no=hall_ticket_no,
-        #     student_name=student_name,
-        #     branch=branch,
-        #     # training_type=section,
-        #     # venue=venue,
-        #     email_id=email_id,
-        # )
-        # obj.save()
-    return HttpResponse("All the Users Name are the Saved in the Database")
 
 
 @login_required
