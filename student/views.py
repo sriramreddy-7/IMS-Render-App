@@ -7,7 +7,7 @@ from student.models import Jobs,Std,SD2,btech_25
 from django.http import HttpResponse,HttpResponseRedirect
 from django.views.decorators.cache import cache_control
 from django.contrib.auth.decorators import login_required
-import pandas as pd
+# import pandas as pd
 from django.contrib.auth import update_session_auth_hash
 from django.contrib.auth.forms import PasswordChangeForm
 from django.contrib import messages
