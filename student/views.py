@@ -84,7 +84,7 @@ def student_dashboard(request):
 
 
 def data_store(request):
-    return HttpResponse('<h1 style="color:green;"> Details has been stored succesfully into the database !</h1>')
+    return HttpResponse('<h1 style="color:green;"> Details has been stored succesfully into the database!</h1>')
 
 @login_required    
 def all_students(request):
