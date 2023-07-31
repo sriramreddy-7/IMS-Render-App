@@ -44,9 +44,16 @@ def my_login(request):
     
 @login_required    
 def tpo_dashboard(request):
-    student_counts = Std.objects.values('branch', 'section').annotate(total_students=Count('hall_ticket_no'))
+    # student_counts = Std.objects.values('branch', 'section').annotate(total_students=Count('hall_ticket_no'))
+    jobs_count=Jobs.objects.count()
+    std_count=Std.objects.count()
+    sd2_count=SD2.objects.count()
+    btech_25_count=btech_25.objects.count()
     context = {
-        'student_counts': student_counts,
+        'jobs_count':jobs_count,
+        'std_count':std_count,
+        'sd2_count':sd2_count,
+        'btech_25_count':btech_25_count,
     }
     return render(request,'tpo_dashboard.html',context)
 
@@ -82,7 +89,6 @@ def student_dashboard(request):
     jobs=sorted(jobs, key=lambda x: x.post_date, reverse=True)
     return render(request,'student_dashboard.html',{'jobs':jobs})
 
-
 def data_store(request):
     return HttpResponse('<h1 style="color:green;"> Details has been stored succesfully into the database!</h1>')
 
@@ -101,8 +107,7 @@ def logout_view(request):
     response = HttpResponseRedirect('/')
     response.delete_cookie('sessionid')
     return response
-  
-    
+
 def info(request):
     return render(request,'info.html')
 
@@ -120,7 +125,6 @@ def job_listing(request):
 def all_btech_25(request):
     std=btech_25.objects.all()
     return render(request,'btech_25.html',{'std':std})
-
 
 @login_required
 def change_password(request):
@@ -141,6 +145,5 @@ def change_password(request):
                 messages.error(request, 'New passwords do not match.')
         else:
             messages.error(request, 'Current password is incorrect.')
-
     return render(request, 'change_password.html')
 
