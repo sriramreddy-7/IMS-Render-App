@@ -36,7 +36,11 @@
         <p class="card-text">
           {{ job.job_type }} | {{ job.post_date }} | {{ job.deadline_date }}
         </p>
-        <a href="{{ job.job_url }}" class="btn btn-primary" target="_blank"
+        <a
+          href="{{ job.job_url }}"
+          style="text-align: right"
+          class="btn btn-primary btn-sm"
+          target="_blank"
           >Apply Now !</a
         >
       </div>
