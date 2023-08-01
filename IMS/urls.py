@@ -37,4 +37,6 @@ urlpatterns = [
     path('all_btech_25',views.all_btech_25,name="all_btech_25"),
     # path('bulk_users',views.bulk_users,name="bulk_users"),
     path('change_password/', views.change_password, name='change_password'),
+    path('student_profile',views.student_profile,name="student_profile"),
 ]
+6565

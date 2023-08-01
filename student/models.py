@@ -72,4 +72,11 @@ class btech_25(models.Model):
 #         db_table = 'user'
 
 #     def __str__(self):
-#         return self.email
+#         return self.email 
+class pe_se(models.Model):
+    hallticket_no = models.CharField(max_length=12,primary_key=True)
+    student_name = models.CharField(max_length=100)
+    branch = models.CharField(max_length=50)
+    Year_Sem_Branch_Spl_Sec=models.CharField(max_length=50) 
+    faculty_Name=models.CharField(max_length=50) 
+    elective=models.CharField(max_length=50) 

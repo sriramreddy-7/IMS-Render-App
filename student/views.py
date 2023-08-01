@@ -1,14 +1,15 @@
-from django.shortcuts import render ,redirect
+from django.shortcuts import render ,redirect, reverse
 from django.contrib.auth import authenticate,logout,login
 from django.db.models import Count
 from django.contrib.auth.models import User
-from student.models import Jobs,Std,SD2,btech_25
+from student.models import Jobs,Std,SD2,btech_25,pe_se
 from django.http import HttpResponse,HttpResponseRedirect
 from django.views.decorators.cache import cache_control
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import update_session_auth_hash
 from django.contrib.auth.forms import PasswordChangeForm
 from django.contrib import messages
+import pandas as pd
 # Create your views here.
 
 
@@ -30,7 +31,8 @@ def my_login(request):
             if user is not None:
                 login(request,user)
                 if designation == 'student' :
-                    return redirect('student_dashboard')
+                    user=User.objects.get(username=username)
+                    return redirect(reverse('student_dashboard', args=[user]))
                 elif designation == 'tpo' and username=="tpo":
                     return redirect('tpo_dashboard')
                 elif designation == 'admin' and username=="admin":
@@ -85,6 +87,7 @@ def tpo_post_job(request):
 
 @login_required       
 def student_dashboard(request):
+    # std=Std.objects.get()
     jobs=Jobs.objects.all()
     jobs=sorted(jobs, key=lambda x: x.post_date, reverse=True)
     return render(request,'student_dashboard.html',{'jobs':jobs})
@@ -147,3 +150,12 @@ def change_password(request):
             messages.error(request, 'Current password is incorrect.')
     return render(request, 'change_password.html')
 
+
+
+@login_required    
+def student_profile(request):
+    student_id=Std.objects.get(hall_ticket_no=id)
+    context={
+        'student_id':student_id,
+    }
+    return render(request,'student_profile.html',context)
