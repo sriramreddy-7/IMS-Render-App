@@ -92,7 +92,7 @@ WSGI_APPLICATION = 'IMS.wsgi.application'
 import dj_database_url
 
 DATABASES = {
-    'default': dj_database_url.parse('postgresql://postgres:7bTXJcKmQJYDgabOLCJP@containers-us-west-82.railway.app:7045/railway')
+    'default': dj_database_url.parse('postgres://ims_admin:pDPBKoxASDO7b0YKbL0U5LiQNeE6MppZ@dpg-ckl52vrj89us73cda8hg-a.oregon-postgres.render.com/db_ims_sru_e5ev')
 }
 
 
